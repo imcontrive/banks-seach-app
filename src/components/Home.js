@@ -104,7 +104,7 @@ class Home extends Component {
           <div>
             <div>
               <select className="select" name="city" value={this.state.city}  onChange={this.handleChange}>
-                <option  key="defaults" className="option">Select your City</option>
+                <option  key="defaults" value="NAINITAL" className="option">Select your City</option>
                 {
                   cities.map((city,index) => 
                     <option key={index} value={city.name} >{city.name}</option>
@@ -159,13 +159,17 @@ class Home extends Component {
                 }
               </tbody>
             </table> 
-          <div className="pagination">
             {
-              listArr ? listArr.map((pageNum,index) => 
-              <button key={index} className={this.state.currentPage === pageNum ? "activePageBtn btn":"page-btn btn"} onClick={()=> this.handlePageChange(pageNum)} >{pageNum}</button>
-              ):""
+              listArr && listArr.length > 2 ?
+
+             <div className="pagination">
+             {
+               listArr ? listArr.map((pageNum,index) => 
+               <button key={index} className={this.state.currentPage === pageNum ? "activePageBtn btn":"page-btn btn"} onClick={()=> this.handlePageChange(pageNum)} >{pageNum}</button>
+               ):""
+             }
+            </div>:""
             }
-          </div>
           </> : this.state.isBookmarked ? <ShowBookmark /> : <Loading />
           }        
       </React.Fragment>
