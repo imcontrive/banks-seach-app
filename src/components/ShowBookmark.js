@@ -3,10 +3,9 @@ import React, { Component } from 'react';
 export default class ShowBookmark extends Component {
 
   componentDidMount() {
-    this.findUnique();
+    // this.findUnique();
   }
   
-
   findUnique = (banksData) => {
     if(banksData){
       banksData=[...new Set(banksData)]
@@ -15,6 +14,7 @@ export default class ShowBookmark extends Component {
   
   render() {    
     var banksData = JSON.parse(localStorage.getItem("FavbanksInfo"));
+    this.findUnique(banksData);
 
     return (
       <div>

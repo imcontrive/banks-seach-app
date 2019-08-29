@@ -5,6 +5,7 @@ import {fetchData} from '../actions'
 import ShowBookmark from './ShowBookmark';
 
 
+
 var listArr = [], favBanksId = [];
 
 class Home extends Component {
@@ -78,8 +79,8 @@ class Home extends Component {
 
   render() {
     const { banksInfo } = this.props;
-    const cities = [{name:"KANGRA",id: 1},{name:"AGRA",id: 2}, {name:"MANALI",id: 3},{name:"SHIMLA",id: 4},{name:"DHARAMSHALA",id: 5}];
-    var { query } = this.state;
+    const cities = [{name:"DHARAMSHALA",id: 1},{name:"DALHOUSIE",id: 2}, {name:"PALAMPUR",id: 3},{name:"SHIMLA",id: 4},{name:"MANALI",id: 5}];
+    var { query} = this.state;
     
     let displayArr = [];
     // search implementation code
@@ -161,7 +162,7 @@ class Home extends Component {
           <div className="pagination">
             {
               listArr ? listArr.map((pageNum,index) => 
-              <button key={index} onClick={()=> this.handlePageChange(pageNum)} >{pageNum}</button>
+              <button key={index} className={this.state.currentPage === pageNum ? "activePageBtn btn":"page-btn btn"} onClick={()=> this.handlePageChange(pageNum)} >{pageNum}</button>
               ):""
             }
           </div>

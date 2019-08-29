@@ -11,6 +11,6 @@ export function fetchData(city){
         dispatch({ type: "GET_BANKS_INFO", payload: spread});
         res('data loaded');
       }).catch(err => console.log(err));
-    })
+    }).then( res => res())
   }
 };

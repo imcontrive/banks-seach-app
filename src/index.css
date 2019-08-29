@@ -196,17 +196,30 @@ td, th {
   width: 840px;
   padding:  1rem 0;
   margin: 0 auto;
+  /* text-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.1); */
 }
 .pagination > button {
-  background: snow;
-  color: black;
+  padding: 2px 5px;
+  margin: 5px;
+  border-radius: 2px;
+  font-weight: 700;
+
 }
 
-.pagination > button:active {
-  background:black;
+.activePageBtn {
+  background: #1C3144;
+  border: 1px solid #1C3149;
   color: snow;
+  margin: 3px;
+  padding: 1px 5px;
+}
+.page-btn {
+  border: 1px solid #1C3149;
+  color: #1C3144;
 }
 
 .displayMsg {
   text-align: center;
 }
+
+
