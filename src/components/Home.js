@@ -87,8 +87,8 @@ class Home extends Component {
     if (query) {
       const regexp = new RegExp(query, 'i')
       displayArr = banksInfo.filter(bank => (regexp.test(bank.bank_name) || regexp.test(bank.branch) || regexp.test(bank.ifsc) || regexp.test(bank.city) || regexp.test(bank.district) || regexp.test(bank.address)));
-      
-    } else {
+      this.createListsArr(displayArr);
+    }else {
       displayArr = banksInfo
       this.createListsArr(displayArr);
     }
